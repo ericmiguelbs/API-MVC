@@ -1,5 +1,4 @@
 from flask import render_template, request, redirect, url_for
-# Importa o db diretamente do seu arquivo principal ou de onde ele está
 from models.task import db 
 from models.task import Task
 from models.user import User
@@ -9,7 +8,6 @@ class TaskController:
     @staticmethod
     def list_tasks():
         tasks = Task.query.all()
-        # Corrige o nome da variável para 'tasks' para corresponder ao template HTML
         return render_template('tasks.html', tasks=tasks)
 
     @staticmethod
